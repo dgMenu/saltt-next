@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Logo from "../public/logo.png";
 
 export default function Header() {
   return (
@@ -10,7 +9,7 @@ export default function Header() {
             <a>
               <div className="relative h-12 w-32">
                 <image
-                  src={Logo}
+                  src="/logo.png"
                   alt="Saltt Logo"
                   layout="fill"
                   objectFit="contain"

@@ -1,10 +1,4 @@
 import Head from "next/head";
-import Wordmark from "../public/wordmark.png";
-import Fishing from "../public/icons/undraw_fishing.svg";
-import Party from "../public/icons/undraw_outdoor_party.svg";
-import Image1 from "../public/gallery/image1.jpg";
-import Image2 from "../public/gallery/image2.jpg";
-import Image3 from "../public/gallery/image3.jpg";
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -22,7 +16,7 @@ const Home = () => {
             </h1>
             <p className="uppercase tracking-wider text-xl">only at</p>
             <div className="h-16 lg:h-20">
-              <img src={Wordmark} alt="Saltt Kitchen 'n Bar" />
+              <img src="/wordmark.png" alt="Saltt Kitchen 'n Bar" />
             </div>
 
             <div className="flex gap-5 mt-16 flex-col md:flex-row w-full justify-center">
@@ -53,7 +47,7 @@ const Home = () => {
         <div className="box grid lg:grid-cols-2 gap-16 pb-8 pt-28">
           <div className="flex gap-8 items-start max-w-2xl">
             <div className="h-32 w-5/12">
-              <img src={Party} alt="" />
+              <img src="/icons/undraw_outdoor_party.svg" alt="" />
             </div>
             <div>
               <h3 className="font-bold text-3xl">
@@ -67,7 +61,7 @@ const Home = () => {
           </div>
           <div className="flex gap-8 items-start max-w-2xl">
             <div className="h-32 w-5/12">
-              <img src={Fishing} alt="" />
+              <img src="/icons/undraw_fishing.svg" alt="" />
             </div>
             <div>
               <h3 className="font-bold text-3xl">
@@ -88,9 +82,9 @@ const Home = () => {
             From the &apos;Gram
           </h2>
           <div className="grid lg:grid-cols-3 gap-3 mt-12 w-full justify-items-center">
-            <img src={Image1} alt="" />
-            <img src={Image2} alt="" />
-            <img src={Image3} alt="" />
+            <img src="/gallery/image1.jpg" alt="" />
+            <img src="/gallery/image2.jpg" alt="" />
+            <img src="/gallery/image3.jpg" alt="" />
           </div>
         </div>
       </section>
