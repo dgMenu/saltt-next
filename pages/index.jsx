@@ -15,9 +15,11 @@ const Home = () => {
               Taste the difference
             </h1>
             <p className="uppercase tracking-wider text-xl">only at</p>
-            <div className="h-16 lg:h-20">
-              <img src="/wordmark.png" alt="Saltt Kitchen 'n Bar" />
-            </div>
+            <img
+              src="/wordmark.png"
+              alt="Saltt Kitchen 'n Bar"
+              className="h-16 lg:h-20"
+            />
 
             <div className="flex gap-5 mt-16 flex-col md:flex-row w-full justify-center">
               <a
@@ -46,9 +48,11 @@ const Home = () => {
       <section id="feature">
         <div className="box grid lg:grid-cols-2 gap-16 pb-8 pt-28">
           <div className="flex gap-8 items-start max-w-2xl">
-            <div className="h-32 w-5/12">
-              <img src="/icons/undraw_outdoor_party.svg" alt="" />
-            </div>
+            <img
+              src="/icons/undraw_outdoor_party.svg"
+              alt=""
+              className="h-32 w-5/12"
+            />
             <div>
               <h3 className="font-bold text-3xl">
                 Not just a restaurant, but also a party place.
@@ -60,9 +64,11 @@ const Home = () => {
             </div>
           </div>
           <div className="flex gap-8 items-start max-w-2xl">
-            <div className="h-32 w-5/12">
-              <img src="/icons/undraw_fishing.svg" alt="" />
-            </div>
+            <img
+              src="/icons/undraw_fishing.svg"
+              alt=""
+              className="h-32 w-5/12"
+            />
             <div>
               <h3 className="font-bold text-3xl">
                 Always the freshest seafood.

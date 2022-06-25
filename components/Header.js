@@ -7,14 +7,7 @@ export default function Header() {
         <div>
           <Link href="/">
             <a>
-              <div className="relative h-12 w-32">
-                <image
-                  src="/logo.png"
-                  alt="Saltt Logo"
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
+              <img src="/logo.png" alt="Saltt Logo" className="h-12 w-32" />
             </a>
           </Link>
         </div>
