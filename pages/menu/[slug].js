@@ -65,14 +65,14 @@ export default function CategoryPage({ subCategories, categories }) {
                 href={`/menu/${category.slug.current}`}
                 key={category.slug.current}
               >
-                <a className="py-5 px-5 lg:px-16 text-lg shadow w-full text-center">
+                <a className="py-5 px-5 lg:px-16 text-lg shadow-md w-full text-center">
                   {category.name}
                 </a>
               </Link>
             );
           })}
         </aside>
-        <section className=" min-h-full flex-1 w-full overflow-y-scroll px-8 lg:px-20 pb-20">
+        <section className="min-h-full flex-1 w-full overflow-y-scroll px-8 lg:px-20 pb-20 bg-[url('/pattern.svg')] bg-no-repeat bg-cover bg-right-top">
           <div>
             {subCategories.map((subCategory) => {
               return (

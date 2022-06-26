@@ -23,13 +23,13 @@ const Home = () => {
 
             <div className="flex gap-5 mt-16 flex-col md:flex-row w-full justify-center">
               <a
-                href="#"
+                href="#meet"
                 className="btn font-bold uppercase bg-saltt border-saltt pt-3 hover:opacity-80 transition-all duration-300 text-center w-full md:w-fit"
               >
                 Take me there
               </a>
               <a
-                href="#"
+                href="/menu"
                 className="btn font-bold uppercase border-saltt pt-3 hover:bg-saltt transition-all duration-300 text-center w-full md:w-fit"
               >
                 What&apos;s cookin&apos; ?
@@ -95,7 +95,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center">
+      <section
+        className="bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center"
+        id="meet"
+      >
         <div className="h-full w-full bg-black/60 text-white">
           <div className="box py-20 pt-28">
             <h2 className="font-black text-5xl drop-shadow-lg text-center leading-[4rem]">
