@@ -2,6 +2,30 @@ import Head from "next/head";
 import Link from "next/link";
 import { createClient } from "next-sanity";
 
+export async function getServerSideProps(context) {
+  const client = createClient({
+    projectId: "8iyz9xa5",
+    dataset: "production",
+    apiVersion: "2021-10-31",
+    useCdn: false,
+  });
+  const query = `*[_type == "category" && available ]  | order(index asc)`;
+  const categories = await client.fetch(query);
+
+  const firstCategorySlug = categories[0].slug.current;
+
+  if (!categories) {
+    return { notFound: true };
+  } else
+    return {
+      redirect: {
+        destination: `/menu/${firstCategorySlug}`,
+        permanent: false,
+      },
+      props: { categories },
+    };
+}
+
 export default function Menu({ categories }) {
   return (
     <>
@@ -16,29 +40,15 @@ export default function Menu({ categories }) {
                 href={`/menu/${category.slug.current}`}
                 key={category.slug.current}
               >
-                <a className="py-5 px-5 lg:px-16 text-lg shadow w-full text-center">
+                <a className="py-5 px-5 lg:px-16 text-lg shadow-md w-full text-center">
                   {category.name}
                 </a>
               </Link>
             );
           })}
         </aside>
-        <section className=" min-h-full flex-1 w-full overflow-y-scroll px-8 lg:px-20 pb-20"></section>
+        <section className="min-h-full flex-1 w-full overflow-y-scroll px-8 lg:px-20 pb-20 bg-[url('/pattern.svg')] bg-no-repeat bg-cover bg-right-top"></section>{" "}
       </main>
     </>
   );
-}
-
-export async function getServerSideProps(context) {
-  const client = createClient({
-    projectId: "8iyz9xa5",
-    dataset: "production",
-    apiVersion: "2021-10-31",
-    useCdn: false,
-  });
-  const query = `*[_type == "category" && available ]`;
-  const categories = await client.fetch(query);
-  if (!categories) {
-    return { notFound: true };
-  } else return { props: { categories } };
 }
