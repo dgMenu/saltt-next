@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -28,12 +29,11 @@ const Home = () => {
               >
                 Take me there
               </a>
-              <a
-                href="/menu"
-                className="btn font-bold uppercase border-saltt pt-3 hover:bg-saltt transition-all duration-300 text-center w-full md:w-fit"
-              >
-                What&apos;s cookin&apos; ?
-              </a>
+              <Link href="/menu">
+                <a className="btn font-bold uppercase border-saltt pt-3 hover:bg-saltt transition-all duration-300 text-center w-full md:w-fit">
+                  What&apos;s cookin&apos; ?
+                </a>
+              </Link>
             </div>
           </div>
           <a
