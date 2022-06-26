@@ -1,57 +1,35 @@
 import Head from "next/head";
 import Link from "next/link";
 import { createClient } from "next-sanity";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
-export async function getStaticPaths() {
-  const client = createClient({
-    projectId: "8iyz9xa5",
-    dataset: "production",
-    apiVersion: "2021-10-31",
-    useCdn: false,
-  });
-  const query = `*[_type == "category"]{slug}`;
-  const categories = await client.fetch(query);
-  const paths = categories.map((category) => {
-    return {
-      params: {
-        slug: category.slug.current,
-      },
+export default function CategoryPage() {
+  const { asPath } = useRouter();
+  const slugArray = asPath.split("/");
+  const slug = slugArray[slugArray.length - 1];
+  const [categories, setCategories] = useState([]);
+  const [subCategories, setSubCategories] = useState([]);
+  useEffect(() => {
+    const client = createClient({
+      projectId: "8iyz9xa5",
+      dataset: "production",
+      apiVersion: "2021-10-31",
+      useCdn: false,
+    });
+    const fetchData = async (query) => {
+      const data = await client.fetch(query);
+      return data;
     };
-  });
 
-  return { paths: paths, fallback: false };
-}
+    fetchData(`*[_type == "category" && available]  | order(index asc)
+    `).then((data) => setCategories(data));
 
-export async function getStaticProps(context) {
-  const slug = context.params.slug;
-  const client = createClient({
-    projectId: "8iyz9xa5",
-    dataset: "production",
-    apiVersion: "2021-10-31",
-    useCdn: false,
-  });
-  const categoryIdQuery = `*[_type == "category" && slug.current == "${slug}"][0]{_id}`;
-  const categoryIdObject = await client.fetch(categoryIdQuery);
+    fetchData(
+      `*[_type == "subCategory" && category._ref == *[_type == "category" && slug.current == "${slug}"][0]._id]`
+    ).then((data) => setSubCategories(data));
+  }, [slug]);
 
-  const categoryId = categoryIdObject._id;
-
-  const subCategoriesQuery = `*[_type == "subCategory" && category._ref == "${categoryId}"]`;
-
-  const subCategories = await client.fetch(subCategoriesQuery);
-
-  const categoriesQuery = `*[_type == "category" && available ]`;
-
-  const categories = await client.fetch(categoriesQuery);
-
-  return {
-    props: {
-      subCategories,
-      categories,
-    },
-  };
-}
-
-export default function CategoryPage({ subCategories, categories }) {
   return (
     <>
       <Head>
@@ -65,7 +43,13 @@ export default function CategoryPage({ subCategories, categories }) {
                 href={`/menu/${category.slug.current}`}
                 key={category.slug.current}
               >
-                <a className="py-5 px-5 lg:px-16 text-lg shadow-md w-full text-center">
+                <a
+                  className={
+                    asPath == `/menu/${category.slug.current}`
+                      ? "py-5 px-5 lg:px-16 text-lg shadow-lg w-full text-center bg-saltt-300"
+                      : "py-5 px-5 lg:px-16 text-lg shadow-md w-full text-center"
+                  }
+                >
                   {category.name}
                 </a>
               </Link>
@@ -75,12 +59,23 @@ export default function CategoryPage({ subCategories, categories }) {
         <section className="min-h-full flex-1 w-full overflow-y-scroll px-8 lg:px-20 pb-20 bg-[url('/pattern.svg')] bg-no-repeat bg-cover bg-right-top">
           <div>
             {subCategories.map((subCategory) => {
+              subCategories.sort(function (x, y) {
+                return x.name.toLowerCase().includes("other")
+                  ? -1
+                  : y.name.toLowerCase().includes("other")
+                  ? 1
+                  : 0;
+              });
+
               return (
+                subCategory.available &&
                 subCategory.items && (
-                  <div className="mt-16" key="{subCategory.name}">
+                  <div className="mt-16" key={subCategory.name}>
                     <div>
                       <h3 className="font-black text-3xl">
-                        {subCategory.name}
+                        {subCategory.name.toLowerCase().includes("other")
+                          ? ""
+                          : subCategory.name}
                       </h3>
                       <p className="max-w-[60ch] mt-1">
                         {subCategory.description}

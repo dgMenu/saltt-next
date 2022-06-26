@@ -1,6 +1,21 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
 export default function Header() {
+  const { asPath } = useRouter();
+
+  const navLinks = [
+    {
+      name: "Home",
+      path: "/",
+    },
+    {
+      name: "Menu",
+      path: "/menu",
+    },
+  ];
+
   return (
     <header className="shadow-md z-10 max-h-[10vh] bg-white text-black">
       <div className="box flex items-center justify-between py-5">
@@ -12,12 +27,20 @@ export default function Header() {
           </Link>
         </div>
         <nav className="flex items-center gap-3 text-lg">
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-          <Link href="/menu">
-            <a>Menu</a>
-          </Link>
+          {navLinks.map((link) => (
+            <Link href={link.path} key={link.name}>
+              <a
+                className={
+                  asPath.replace("/", "").includes(link.name.toLowerCase()) ||
+                  (asPath == "/" && link.path == "/")
+                    ? "relative after:h-2 after:w-2 after:block after:bg-saltt after:absolute after:rounded-full after:right-1/2 after:translate-x-1/2"
+                    : ""
+                }
+              >
+                {link.name}
+              </a>
+            </Link>
+          ))}
         </nav>
       </div>
     </header>

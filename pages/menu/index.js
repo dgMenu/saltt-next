@@ -29,7 +29,7 @@ export default function Menu({ categories }) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const client = createClient({
     projectId: "8iyz9xa5",
     dataset: "production",
