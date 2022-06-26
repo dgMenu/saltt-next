@@ -27,8 +27,18 @@ export default function CategoryPage() {
 
     fetchData(
       `*[_type == "subCategory" && category._ref == *[_type == "category" && slug.current == "${slug}"][0]._id]`
-    ).then((data) => setSubCategories(data));
+    ).then((data) => {
+      setSubCategories(data);
+    });
   }, [slug]);
+
+  subCategories.sort(function (x, y) {
+    return x.name.toLowerCase().includes("other")
+      ? -1
+      : y.name.toLowerCase().includes("other")
+      ? 1
+      : 0;
+  });
 
   return (
     <>
@@ -59,14 +69,6 @@ export default function CategoryPage() {
         <section className="min-h-full flex-1 w-full overflow-y-scroll px-8 lg:px-20 pb-20 bg-[url('/pattern.svg')] bg-no-repeat bg-cover bg-right-top">
           <div>
             {subCategories.map((subCategory) => {
-              subCategories.sort(function (x, y) {
-                return x.name.toLowerCase().includes("other")
-                  ? -1
-                  : y.name.toLowerCase().includes("other")
-                  ? 1
-                  : 0;
-              });
-
               return (
                 subCategory.available &&
                 subCategory.items && (
