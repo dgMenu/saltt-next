@@ -105,8 +105,8 @@ const Home = () => {
               see you enjoy every bit of our hospitality we have to offer, which
               indeed makes us happy, wanting to do more. We feel proud that we
               could deliver not only our service but also a smile on your face.
-              It's more about you, our wonderful people and a little about us.
-              We want to serve you the best we can. With you we grow.
+              It&apos;s more about you, our wonderful people and a little about
+              us. We want to serve you the best we can. With you we grow.
             </p>
             <p>Thanking you all, for your loyalty and trust in us.</p>
             <span className="font-bold"> ~ SALTŤ Familia </span>
