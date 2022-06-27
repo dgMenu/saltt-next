@@ -53,14 +53,11 @@ const Home = () => {
               alt=""
               className="h-32 w-5/12"
             />
-            <div>
-              <h3 className="font-bold text-3xl">
+            <div className="w-7/12">
+              <h3 className="font-bold text-2xl">
                 Not just a restaurant, but also a party place.
               </h3>
-              <p className="mt-2 text-lg">
-                Pellentesque facilisis ante vel dolor posuere, id sagittis eros
-                laoreet. Sed a lacinia justo. Vestibulum convallis pulvinar.
-              </p>
+              <p className="mt-2 text-lg"></p>
             </div>
           </div>
           <div className="flex gap-8 items-start max-w-2xl">
@@ -69,14 +66,11 @@ const Home = () => {
               alt=""
               className="h-32 w-5/12"
             />
-            <div>
-              <h3 className="font-bold text-3xl">
+            <div className="w-7/12">
+              <h3 className="font-bold text-2xl">
                 Always the freshest seafood.
               </h3>
-              <p className="mt-2 text-lg">
-                Pellentesque facilisis ante vel dolor posuere, id sagittis eros
-                laoreet. Vestibulum convallis pulvinar.
-              </p>
+              <p className="mt-2 text-lg"></p>
             </div>
           </div>
         </div>
@@ -91,6 +85,31 @@ const Home = () => {
             <img src="/gallery/image1.jpg" alt="" />
             <img src="/gallery/image2.jpg" alt="" />
             <img src="/gallery/image3.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="box py-28 flex flex-col items-center">
+          <h2 className="text-center font-black text-5xl relative w-fit px-4 half-underline">
+            A little About us
+          </h2>
+          <div className="flex flex-col gap-5 mt-12 mx-auto w-full max-w-3xl">
+            <p>
+              Simplicity is the ultimate sophistication at Saltt. We believe in
+              being simple, caring and very much loving to everyone who enters
+              our home and it reflects in our food and service.
+            </p>
+            <p>
+              We take pleasure in serving beautiful people like you. We love to
+              see you enjoy every bit of our hospitality we have to offer, which
+              indeed makes us happy, wanting to do more. We feel proud that we
+              could deliver not only our service but also a smile on your face.
+              It's more about you, our wonderful people and a little about us.
+              We want to serve you the best we can. With you we grow.
+            </p>
+            <p>Thanking you all, for your loyalty and trust in us.</p>
+            <span className="font-bold"> ~ SALTŤ Familia </span>
           </div>
         </div>
       </section>
