@@ -86,20 +86,24 @@ export default function CategoryPage() {
                     <div className="mt-8 space-y-3 columns-1 lg:columns-2 xl:columns-3  ">
                       {subCategory.items.map((item) => {
                         return (
-                          <div
-                            className="flex gap-3 w-full justify-between py-2 px-4 bg-saltt-100 rounded-sm   break-inside-avoid"
-                            key={item.name}
-                          >
-                            <div>
+                          item.available && (
+                            <div
+                              className="flex gap-3 w-full justify-between py-2 px-4 bg-saltt-100 rounded-sm   break-inside-avoid"
+                              key={item.name}
+                            >
+                              <div>
+                                <h4 className="font-black text-lg">
+                                  {item.name}
+                                </h4>
+                                <p className="italic text-sm">
+                                  {item.description}
+                                </p>
+                              </div>
                               <h4 className="font-black text-lg">
-                                {item.name}
+                                {item.price}
                               </h4>
-                              <p className="italic text-sm">
-                                {item.description}
-                              </p>
                             </div>
-                            <h4 className="font-black text-lg">{item.price}</h4>
-                          </div>
+                          )
                         );
                       })}
                     </div>
