@@ -43,7 +43,7 @@ export default function CategoryPage() {
   return (
     <>
       <Head>
-        <title>Menu &bull; Saltt Kitchen &apos;n Bar</title>
+        <title>Menu &bull; Archie Restaurant</title>
       </Head>
       <main className="flex flex-1 max-h-[91vh] min-h-[91vh] overflow-hidden">
         <aside className="flex flex-col max-w-xl bg-saltt-200 overflow-y-scroll items-center h-[91vh]">
@@ -74,7 +74,7 @@ export default function CategoryPage() {
                 subCategory.items && (
                   <div className="mt-16" key={subCategory.name}>
                     <div>
-                      <h3 className="font-black text-3xl">
+                      <h3 className="text-3xl font-black">
                         {subCategory.name.toLowerCase().includes("other")
                           ? ""
                           : subCategory.name}
@@ -83,23 +83,23 @@ export default function CategoryPage() {
                         {subCategory.description}
                       </p>
                     </div>
-                    <div className="mt-8 space-y-3 columns-1 lg:columns-2 xl:columns-3  ">
+                    <div className="mt-8 space-y-3 columns-1 lg:columns-2 xl:columns-3 ">
                       {subCategory.items.map((item) => {
                         return (
                           item.available && (
                             <div
-                              className="flex gap-3 w-full justify-between py-2 px-4 bg-saltt-100 rounded-sm   break-inside-avoid"
+                              className="flex justify-between w-full gap-3 px-4 py-2 rounded-sm bg-saltt-100 break-inside-avoid"
                               key={item.name}
                             >
                               <div>
-                                <h4 className="font-black text-lg">
+                                <h4 className="text-lg font-black">
                                   {item.name}
                                 </h4>
-                                <p className="italic text-sm">
+                                <p className="text-sm italic">
                                   {item.description}
                                 </p>
                               </div>
-                              <h4 className="font-black text-lg">
+                              <h4 className="text-lg font-black">
                                 {item.price}
                               </h4>
                             </div>

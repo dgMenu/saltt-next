@@ -7,11 +7,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "saltt-100": "#FFF5E4",
-        "saltt-200": "#FFEAC1",
-        "saltt-300": "#F7D082",
-        "saltt-400": "#F3B750",
-        saltt: "#DB8C05",
+        saltt: {
+          50: "#fef2f2",
+          100: "#fee2e2",
+          200: "#fecaca",
+          300: "#fca5a5",
+          400: "#f87171",
+          500: "#ef4444",
+          DEFAULT: "#fe0000",
+          600: "#dc2626",
+          700: "#b91c1c",
+          800: "#991b1b",
+          900: "#7f1d1d",
+        },
       },
       fontFamily: {
         sans: ["Josefin Sans", "sans-serif"],

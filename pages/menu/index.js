@@ -30,7 +30,7 @@ export default function Menu({ categories }) {
   return (
     <>
       <Head>
-        <title>Menu &bull; Saltt Kitchen &apos;n Bar</title>
+        <title>Menu &bull; Archie Restaurant</title>
       </Head>
       <main className="flex flex-1 max-h-[91vh] min-h-[91vh] overflow-hidden">
         <aside className="flex flex-col max-w-xl bg-saltt-200 overflow-y-scroll items-center h-[91vh]">
@@ -40,7 +40,7 @@ export default function Menu({ categories }) {
                 href={`/menu/${category.slug.current}`}
                 key={category.slug.current}
               >
-                <a className="py-5 px-5 lg:px-16 text-lg shadow-md w-full text-center">
+                <a className="w-full px-5 py-5 text-lg text-center shadow-md lg:px-16">
                   {category.name}
                 </a>
               </Link>

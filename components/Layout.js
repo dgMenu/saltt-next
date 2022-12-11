@@ -5,11 +5,11 @@ import Header from "./Header";
 export default function Layout({ children }) {
   return (
     <>
-      <section className="w-screen min-h-screen flex flex-col overflow-x-hidden ">
-        <Head>
-          <link rel="shortcut icon" href="/fav.png" type="image/x-icon" />
-          <title> Saltt Kitchen &apos;n Bar</title>
-        </Head>
+      <Head>
+        <link rel="shortcut icon" href="/lettermark.svg" type="image/x-icon" />
+        <title> Archie Restaurant, Loutolim - Goa</title>
+      </Head>
+      <section className="flex flex-col w-screen min-h-screen overflow-x-hidden ">
         <Header />
         <main className="flex-1">{children}</main>
         {/* <Footer /> */}

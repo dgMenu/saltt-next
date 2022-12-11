@@ -18,11 +18,11 @@ export default function Header() {
 
   return (
     <header className="shadow-md z-10 max-h-[10vh] bg-white text-black">
-      <div className="box flex items-center justify-between py-5">
+      <div className="flex items-center justify-between py-5 box">
         <div>
           <Link href="/">
             <a>
-              <img src="/logo.png" alt="Saltt Logo" className="h-12" />
+              <img src="/logo.svg" alt="Archie Restaurant" className="h-12" />
             </a>
           </Link>
         </div>
