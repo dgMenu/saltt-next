@@ -121,7 +121,7 @@ const Home = () => {
         <div className="w-full h-full text-white bg-black/60">
           <div className="py-20 box pt-28">
             <h2 className="font-black text-5xl drop-shadow-lg text-center leading-[4rem]">
-              Let&apos;s मीट at SALTŤ
+              We l❤ve you
             </h2>
           </div>
         </div>
