@@ -7,7 +7,7 @@ export default function Footer() {
     },
     {
       classes: "fab fa-instagram",
-      link: "//instagr.am/saltt_kitchennbar",
+      link: "//instagr.am/archie_1997_",
       title: "Instagram",
     },
     {
@@ -18,9 +18,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="text-black bg-saltt-400">
+    <footer className="text-white bg-black">
       <div className="flex flex-col items-center justify-between gap-3 py-4 box md:flex-row">
-        <div className="flex gap-3 text-2xl lg:order-2">
+        <div className="flex gap-3 text-2xl transition-all duration-300 lg:order-2 hover:text-neutral-400">
           {footerIcons.map((icon) => (
             <a
               href={icon.link}
@@ -28,6 +28,7 @@ export default function Footer() {
               key={icon.title}
               target="_blank"
               rel="noreferrer"
+              className="transition-all duration-300 hover:text-white"
             >
               <i className={icon.classes}></i>
             </a>
@@ -37,13 +38,13 @@ export default function Footer() {
           &copy;2022 - Archie Restaurant, Loutolim - Goa
         </span> */}
         <a
-          className=" group"
+          className="group"
           href="//gavinpereira.in"
           target="_blank"
           rel="noreferrer"
         >
           <i className="fas fa-code"></i> by{" "}
-          <span className="font-bold underline transition-all decoration-transparent group-hover:decoration-black">
+          <span className="font-bold underline transition-all duration-300 decoration-transparent group-hover:decoration-white underline-offset-4">
             Gavin Pereira
           </span>
         </a>

@@ -109,19 +109,23 @@ const Home = () => {
               us. We want to serve you the best we can. With you we grow.
             </p>
             <p>Thanking you all, for your loyalty and trust in us.</p>
-            <span className="font-bold"> ~ SALTŤ Familia </span>
+            {/* <span className="font-bold"> ~ SALTŤ Familia </span> */}
           </div>
         </div>
       </section>
 
       <section
-        className="bg-[url('/banner.jpg')] bg-no-repeat bg-cover bg-center"
+        className="bg-[url('/board.jpg')] bg-no-repeat bg-cover bg-center"
         id="meet"
       >
-        <div className="w-full h-full text-white bg-black/60">
+        <div className="w-full h-full text-white bg-black/70">
           <div className="py-20 box pt-28">
-            <h2 className="font-black text-5xl drop-shadow-lg text-center leading-[4rem]">
-              We l❤ve you
+            <h2 className="font-black text-4xl sm:text-5xl drop-shadow-lg text-center leading-[4rem]">
+              <div className="flex items-center justify-center gap-1">
+                <span>We l</span>
+                <img src="/heart.png" alt="o" className="h-8" />
+                <span>ve you</span>
+              </div>
             </h2>
           </div>
         </div>

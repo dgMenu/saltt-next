@@ -8,12 +8,13 @@
 
 @layer base {
     .box {
-        @apply container mx-auto px-5
+        @apply container px-5 mx-auto;
     }
     .btn{
-        @apply  py-2 px-4 rounded-lg border-4 transition-all
+        @apply  px-4 py-2 transition-all border-4 rounded-lg;
     }
     .half-underline{
-        @apply bg-gradient-to-t from-saltt-400 to-saltt-400 bg-no-repeat bg-[length:100%_20px] bg-[center_top_88%]
+        /* @apply bg-gradient-to-t from-saltt-400 to-saltt-400 bg-no-repeat bg-[length:100%_20px] bg-[center_top_88%]; */
+        @apply underline underline-offset-4 decoration-8 decoration-saltt-500;
     }
 }
