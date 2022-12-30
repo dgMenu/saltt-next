@@ -11,6 +11,7 @@
     "out": "next build && next export"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "next": "^12.1.6",
     "next-sanity": "^0.5.2",
     "react": "18.2.0",

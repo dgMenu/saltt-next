@@ -12,17 +12,33 @@ const Home = () => {
       <main className="bg-[url('/display.jpg')] bg-no-repeat bg-cover bg-left-bottom lg:bg-right-bottom relative">
         <div className="w-full h-full text-white bg-black/70">
           <div className="box min-h-[80vh] flex flex-col items-center gap-4 justify-center overflow-x-hidden">
-            <h1 className="uppercase font-black text-5xl md:text-6xl lg:text-7xl w-[15ch] text-center">
+            <h1
+              className="uppercase font-black text-5xl md:text-6xl lg:text-7xl w-[15ch] text-center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               Taste the difference
             </h1>
-            <p className="text-xl tracking-wider uppercase">only at</p>
+            <p
+              className="text-xl tracking-wider uppercase"
+              data-aos="fade-up"
+              data-aos-delay="1200"
+            >
+              only at
+            </p>
             <img
+              data-aos="fade-up"
+              data-aos-delay="1800"
               src="/wordmark.svg"
               alt="Archie Restaurant"
               className="h-16 lg:h-20"
             />
 
-            <div className="flex flex-col justify-center w-full gap-5 mt-16 md:flex-row">
+            <div
+              className="flex flex-col justify-center w-full gap-5 mt-16 md:flex-row"
+              data-aos="fade-up"
+              data-aos-delay="2500"
+            >
               <a
                 href="#meet"
                 className="w-full pt-3 font-bold text-center uppercase transition-all duration-300 btn bg-saltt border-saltt hover:opacity-80 md:w-fit"
