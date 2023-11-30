@@ -29,9 +29,9 @@ const Home = () => {
             <img
               data-aos="fade-up"
               data-aos-delay="1800"
-              src="/wordmark.svg"
+              src="/archie-sports-bar-white.png"
               alt="Archie Restaurant"
-              className="h-16 lg:h-20"
+              className="h-16 lg:h-28"
             />
 
             <div

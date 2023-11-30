@@ -22,7 +22,11 @@ export default function Header() {
         <div>
           <Link href="/">
             <a>
-              <img src="/logo.svg" alt="Archie Restaurant" className="h-12" />
+              <img
+                src="/archie-sports-bar.png"
+                alt="Archie Restaurant"
+                className="h-12"
+              />
             </a>
           </Link>
         </div>
