@@ -98,9 +98,21 @@ const Home = () => {
             From the &apos;Gram
           </h2>
           <div className="grid w-full gap-3 mt-12 lg:grid-cols-3 justify-items-center">
-            <img src="/gallery/image1.jpg" alt="" />
-            <img src="/gallery/image2.jpg" alt="" />
-            <img src="/gallery/image3.jpg" alt="" />
+            <img
+              className="h-[400px] w-auto object-contain"
+              src="/gallery/image1.jpg"
+              alt=""
+            />
+            <img
+              className="h-[400px] w-auto object-contain"
+              src="/gallery/image2.jpg"
+              alt=""
+            />
+            <img
+              className="h-[400px] w-auto object-contain"
+              src="/gallery/image3.jpg"
+              alt=""
+            />
           </div>
         </div>
       </section>
